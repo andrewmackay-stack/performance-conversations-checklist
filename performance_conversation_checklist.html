@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Conversation Checklist</title>
+    <!-- Google Font Import for Source Sans Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Source Sans Pro font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Source Sans Pro', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom checkbox focus style */
+        input[type="checkbox"]:focus {
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5); /* Indigo-300 with 50% opacity */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl w-full bg-white p-8 sm:p-10 rounded-xl shadow-xl">
+            
+            <!-- <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-8">
+                Performance Conversation Checklist
+            </h1> --> <!-- Title Removed -->
+
+            <!-- Progress Bar -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-2">
+                    <span classs="text-sm font-medium text-gray-700">Progress</span>
+                    <span id="progress-text" class="text-sm font-medium text-indigo-700">0 / 14 items</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                    <div id="progress-bar" class="bg-indigo-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Checklist Sections -->
+            <div class="space-y-6">
+
+                <!-- Section 1: Prepare -->
+                <div class="checklist-section">
+                    <h2 class="text-xl font-semibold text-[#11b5ea] mb-3">1. Prepare</h2>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <input id="item1" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item1" class="ml-3 text-gray-700 leading-snug">Review recent absences or challenges.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item2" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item2" class="ml-3 text-gray-700 leading-snug">Balance feedback with strengths.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item3" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item3" class="ml-3 text-gray-700 leading-snug">Have support resources ready (EAP, adjustments).</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 2: Schedule -->
+                <div class="checklist-section">
+                    <h2 class="text-xl font-semibold text-[#11b5ea] mb-3">2. Schedule</h2>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <input id="item4" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item4" class="ml-3 text-gray-700 leading-snug">Avoid deadlines or peak periods.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item5" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item5" class="ml-3 text-gray-700 leading-snug">Give notice so the employee can prepare.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item6" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item6" class="ml-3 text-gray-700 leading-snug">Choose a private space with enough time.</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 3: Separate -->
+                <div class="checklist-section">
+                    <h2 class="text-xl font-semibold text-[#11b5ea] mb-3">3. Separate</h2>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <input id="item7" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item7" class="ml-3 text-gray-700 leading-snug">Make clear it’s a dedicated performance conversation, not a routine 1:1.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item8" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item8" class="ml-3 text-gray-700 leading-snug">Encourage open, two-way discussion.</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 4: Acknowledge -->
+                <div class="checklist-section">
+                    <h2 class="text-xl font-semibold text-[#11b5ea] mb-3">4. Acknowledge</h2>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <input id="item9" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item9" class="ml-3 text-gray-700 leading-snug">Check in on wellbeing.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item10" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item10" class="ml-3 text-gray-700 leading-snug">Consider external or personal pressures that may affect performance.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item11" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item11" class="ml-3 text-gray-700 leading-snug">Adjust goals or timelines if appropriate.</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 5: Address -->
+                <div class="checklist-section">
+                    <h2 class="text-xl font-semibold text-[#11b5ea] mb-3">5. Address</h2>
+                    <ul class="space-y-3 pl-2">
+                        <li class="flex items-start">
+                            <input id="item12" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item12" class="ml-3 text-gray-700 leading-snug">Ask open questions about workload or stress.</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item13" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item13" class="ml-3 text-gray-700 leading-snug">Offer practical support (training, flexibility, time off).</label>
+                        </li>
+                        <li class="flex items-start">
+                            <input id="item14" type="checkbox" class="checklist-item h-5 w-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 mt-0.5">
+                            <label for="item14" class="ml-3 text-gray-700 leading-snug">Follow up on any agreed actions.</label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Reset Button -->
+            <div class="mt-10 text-center">
+                <button id="reset-button" class="px-6 py-2 bg-gray-600 text-white font-medium rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition duration-150">
+                    Reset Checklist
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('.checklist-item');
+            const progressBar = document.getElementById('progress-bar');
+            const progressText = document.getElementById('progress-text');
+            const resetButton = document.getElementById('reset-button');
+            const totalItems = checkboxes.length;
+
+            function updateProgress() {
+                const checkedItems = document.querySelectorAll('.checklist-item:checked').length;
+                const percentage = totalItems > 0 ? (checkedItems / totalItems) * 100 : 0;
+
+                progressBar.style.width = `${percentage}%`;
+                progressText.textContent = `${checkedItems} / ${totalItems} items`;
+            }
+
+            // Add event listener to each checkbox
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+
+            // Add event listener for the reset button
+            resetButton.addEventListener('click', () => {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                updateProgress(); // Update progress bar after resetting
+            });
+
+            // Initial call to set the text correctly on load
+            updateProgress();
+        });
+    </script>
+</body>
+</html>
+
